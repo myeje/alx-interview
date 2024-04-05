@@ -1,15 +1,16 @@
 #!/usr/bin/python3
+''''
+Making change problem
+'''
 def makeChange(coins, total):
-    if total < 0:
-        return 0
-    tp = [float('inf')] * (total + 1)
-    tp[0] = 0
-    
-    for coin in coins:
-        for i in range(coin, total + 1):
-            tp[i] = min(tp[i], tp[i - coin] + 1)
+    dp = [total + 1] * (total + 1)
+    dp[0] = 0
 
-    if tp[total] == float('inf'):
-        return -1
-    else:
-        return tp[total]
+    for a in range(1, total + 1):
+        for coin in coins:
+            if a - coin >= 0:
+                dp[a] = min(dp[a], 1 + dp[a - coin])
+
+    if dp[total] != (total + 1):
+        return dp[total]
+    return -1
