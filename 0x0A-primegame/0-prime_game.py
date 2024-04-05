@@ -4,6 +4,15 @@ Prime game
 """
 
 def isWinner(x, nums):
+    """
+    this code determines the winner of each round of the prime game.
+
+    x (int): Amount of rounds.
+    nums (list): List of integers representing n for each round.
+
+    Returns:
+    str or None
+    """
     def is_prime(n):
         if n <= 1:
             return False
