@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def makeChange(coins, total):
+    if total < 0:
+        return 0
     tp = [float('inf')] * (total + 1)
     tp[0] = 0
     
@@ -11,6 +13,3 @@ def makeChange(coins, total):
         return -1
     else:
         return tp[total]
-
-print(makeChange([1, 2, 25], 37))
-print(makeChange([1256, 54, 48, 16, 102], 1453))
