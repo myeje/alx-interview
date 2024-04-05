@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def makeChange(coins, total):
     tp = [float('inf')] * (total + 1)
     tp[0] = 0
